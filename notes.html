@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Arrays</h1>
+<h2>Sort in Reverse</h2>
+
+<p>The reverse() method reverses the elements in an array.</p>
+<p>By combining sort() and reverse() you can sort an array in descending order:</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+// Create and display an array:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = fruits;
+
+// First sort the array
+fruits.sort();
+
+// Then reverse it:
+fruits.reverse();
+
+document.getElementById("demo2").innerHTML = fruits;
+
+
+</script>
+<h1>JavaScript Arrays</h1>
+<h2>The sort() Method</h2>
+
+<p>Click the buttons to sort the array alphabetically or numerically.</p>
+
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+
+<p id="demo"></p>
+
+<script>
+const points2 = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points2;  
+
+function myFunction1() {
+  points2.sort();
+  document.getElementById("demo").innerHTML = points2;
+}
+function myFunction2() {
+  points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+<h1>JavaScript Array Sort</h1>
+<h2>The Fisher Yates Method</h2>
+
+<p>Click the button (again and again) to sort the array in random order.</p>
+
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<script>
+const points1 = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points1;  
+
+function myFunction() {
+  for (let i = points1.length -1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i+1));
+    let k = points1[i];
+    points1[i] = points1[j];
+    points1[j] = k;
+  }
+  document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+<h2>JavaScript Array Sort</h2>
+<p>The highest number is <span id="demo"></span>.</p>
+
+<script>
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+
+function myArrayMax(arr) {
+  let len = arr.length;
+  let max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+</script>
+
+
+
+<h2>JavaScript const</h2>
+
+<p>Declaring a constant array does NOT make the elements unchangeable:</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an Array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Change an element:
+cars[0] = "Toyota";
+
+// Add an element:
+cars.push("Audi");
+
+// Display the Array:
+document.getElementById("demo").innerHTML = cars; 
+</script>
+
+<h1>JavaScript new Date()</h1>
+
+<p>JavaScript counts months from 0 to 11.</p>
+
+<p id="demo"></p>
+
+<script>
+const d = new Date(2019, 3, 24, 10, 33, 30, 0);
+document.getElementById("demo").innerHTML = d;
+</script>
+
+
+<!-- Date Get Methods
+Method	Description
+getFullYear()	Get year as a four digit number (yyyy)
+getMonth()	Get month as a number (0-11)
+getDate()	Get day as a number (1-31)
+getDay()	Get weekday as a number (0-6)
+getHours()	Get hour (0-23)
+getMinutes()	Get minute (0-59)
+getSeconds()	Get second (0-59)
+getMilliseconds()	Get millisecond (0-999)
+getTime()	Get time (milliseconds since January 1, 1970)
+Note 1
+The get methods above return Local time.
+
+Universal time (UTC) is documented at the bottom of this page.
+
+Note 2
+The get methods return information from existing date objects.
+
+In a date object, the time is static. The "clock" is not "running".
+
+The time in a date object is NOT the same as current time. -->
+
+<h2>JavaScript ISO Dates</h2>
+
+<p id="demoo"></p>
+
+<script>
+const d1 = new Date("2015-03-25");
+document.getElementById("demoo").innerHTML = d1;
+</script>
+
+
+<h1>JavaScript Dates</h1>
+<h2>The getFullYear() Method</h2>
+<p>Return the full year of a date object:</p>
+
+<p id="demo"></p>
+
+<script>
+const d4 = new Date();
+document.getElementById("demo").innerHTML = d4.getFullYear();
+</script>
+
+<!-- Boolean Values
+Very often, in programming, you will need a data type that can only have one of two values, like
+
+YES / NO
+ON / OFF
+TRUE / FALSE
+For this, JavaScript has a Boolean data type. It can only take the values true or false. -->
+
+<h1>JavaScript Booleans</h1>
+<p>Display the value of Boolean(10 > 9):</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = Boolean(10 > 9);
+</script>
+
+<h1>JavaScript Booleans</h1>
+<p>Display the value of 10 > 9:</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 10 > 9;
+</script>
+
+
+<!-- Comparisons and Conditions
+The chapter JS Comparisons gives a full overview of comparison operators.
+
+The chapter JS If Else gives a full overview of conditional statements.
+
+Here are some examples:
+
+Operator	Description	Example
+==	equal to	if (day == "Monday")
+>	greater than	if (salary > 9000)
+<	less than	if (age < 18)
+The Boolean value of an expression is the basis for all JavaScript comparisons and conditions. -->
+
+
+<h1>JavaScript Booleans</h1>
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+"100 is " + Boolean(100) + "<br>" +
+"3.14 is " + Boolean(3.14) + "<br>" +
+"-15 is " + Boolean(-15) + "<br>" +
+"Any (not empty) string is " + Boolean("Hello") + "<br>" +
+"Even the string 'false' is " + Boolean('false') + "<br>" +
+"Any expression (except zero) is " + Boolean(1 + 7 + 3.14);
+</script>
+
+
+<h2>JavaScript if</h2>
+
+<p>Display "Good day!" if the hour is less than 18:00:</p>
+
+<p id="demo">Good Evening!</p>
+
+<script>
+if (new Date().getHours() < 18) {
+  document.getElementById("demo").innerHTML = "Good day!";
+}
+</script>
+
+<h2>JavaScript if .. else</h2>
+
+<p>A time-based greeting:</p>
+
+<p id="demo"></p>
+
+<script>
+const time = new Date().getHours();
+let greeting;
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+document.getElementById("demo").innerHTML = greeting;
+</script>
+
+
+</body>
+</html>
